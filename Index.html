@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Video Browser</title>
+<style>
+body {
+  margin:0;
+  background:#10131b;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+header {
+  background:#176b45;
+  padding:22px;
+  font-size:24px;
+  font-weight:bold;
+}
+input {
+  width:85%;
+  padding:15px;
+  margin:20px 0;
+  border-radius:12px;
+  border:0;
+  font-size:16px;
+}
+button {
+  padding:13px 22px;
+  border:0;
+  border-radius:10px;
+  background:#168c54;
+  color:white;
+  font-size:16px;
+}
+p {color:#bbb}
+</style>
+</head>
+<body>
+<header>🌐 Super Video Browser</header>
+<h3>Selamat Datang</h3>
+<input id="url" placeholder="Cari atau masukkan alamat situs">
+<br>
+<button onclick="go()">BUKA SITUS</button>
+<p>Browser Android Super Video</p>
+<p>Download video 480p / 720p jika tersedia</p>
+<p>Perlindungan iklan sedang dikembangkan</p>
+<script>
+function go(){
+ let u=document.getElementById('url').value.trim();
+ if(!u)return;
+ if(!u.includes('.'))u='https://www.google.com/search?q='+encodeURIComponent(u);
+ else if(!u.startsWith('http'))u='https://'+u;
+ window.open(u,'_blank');
+}
+</script>
+</body>
+</html>
